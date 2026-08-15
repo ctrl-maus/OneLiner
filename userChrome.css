@@ -1,0 +1,132 @@
+/* --------------------------------------------------------------
+   ROOT VARIABLES
+-------------------------------------------------------------- */
+:root {
+  --tab-border-radius: 0 !important;
+  --NavbarWidth: 36;
+  --TabsHeight: 36;
+  --TabsBorder: 8;
+  --NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder));
+}
+
+/* --------------------------------------------------------------
+   GLOBAL CLEANUP
+-------------------------------------------------------------- */
+
+/* Disable ALL animations, transitions, and shadows */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+#identity-box,
+#tracking-protection-icon-container,
+#permissions-granted-icon,
+toolbarpaletteitem[flex],
+#back-button,
+#forward-button {
+  display: none !important;
+}
+
+#urlbar-container {
+  min-width: 0 !important;
+  flex: auto !important;
+}
+
+/* --------------------------------------------------------------
+   MEDIA QUERIES — ONE-LINE NAVBAR
+-------------------------------------------------------------- */
+
+/* ≥1325px */
+@media (min-width:1325px) {
+  :root #nav-bar {
+    margin-top: calc((var(--TabsHeight) + var(--TabsBorder)) * -1px) !important;
+  }
+
+  #TabsToolbar {
+    margin-left: calc(13.25px * var(--NavbarWidth)) !important;
+  }
+
+  #nav-bar {
+    margin-right: calc(100vw - (14.25px * var(--NavbarWidth))) !important;
+    vertical-align: center !important;
+  }
+}
+
+/* 950px–1324px */
+@media (min-width:950px) and (max-width:1324px) {
+  :root #nav-bar {
+    margin-top: calc((var(--TabsHeight) + var(--TabsBorder)) * -1px) !important;
+    height: var(--NavbarHeightSmall) !important;
+  }
+
+  #TabsToolbar {
+    margin-left: calc(var(--NavbarWidth) * 0.9vw) !important;
+  }
+
+  #nav-bar {
+    margin-right: calc(100vw - (var(--NavbarWidth) * 1vw)) !important;
+    vertical-align: center !important;
+  }
+}
+
+/* ≤949px */
+@media (max-width:949px) {
+  :root #nav-bar {
+    padding: 0 5px !important;
+    height: var(--NavbarHeightSmall) !important;
+  }
+  #TabsToolbar {
+    margin-left: -40px !important;
+  }
+}
+
+/* --------------------------------------------------------------
+   GENERAL NAVBAR + TABS
+-------------------------------------------------------------- */
+#nav-bar,
+#PersonalToolbar {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+#nav-bar {
+  margin-left: 0 !important;
+}
+
+.tab-background,
+.tab-stack {
+  min-height: var(--TabsHeight) !important;
+  margin: 0 0 0 -2px !important;
+  box-shadow: none !important;
+}
+
+#tabs-newtab-button {
+  margin-top: -4px !important;
+}
+
+#tabs-newtab-button .toolbarbutton-icon {
+  padding: 6px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* --------------------------------------------------------------
+   MENU BUTTON
+-------------------------------------------------------------- */
+#PanelUI-button {
+  margin-right: -7px !important;
+}
+
+:root[sizemode="maximized"] #PanelUI-button {
+  margin-right: 33px !important;
+}
+
+#reload-button,
+#stop-button {
+  margin-left: 3px !important;
+  margin-right: -2px !important;
+}
